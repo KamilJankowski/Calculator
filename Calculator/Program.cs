@@ -10,7 +10,15 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Calculatorkkk.kk..");
+            string welcome = "Welcome to Simple Calculator - created by Kamil Jankowski";
+            Console.WriteLine(welcome);
+            Console.WriteLine("");
+    
+            for(int i = 0; i<=30; i++)
+            {
+                Console.Write("-");
+            }
+            Console.WriteLine("");
             Console.ReadKey();
         }
     }
