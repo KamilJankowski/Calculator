@@ -9,16 +9,31 @@ namespace Calculator
     class Program
     {
         static void Main(string[] args)
-        {
+        {  
+            //welcome string declartion
             string welcome = "Welcome to Simple Calculator - created by Kamil Jankowski";
-            Console.WriteLine(welcome);
+
+            //display character '-' to separate welcome and program content  
+            for (int i = 0; i < welcome.Length; i++)
+            {
+                Console.Write("-");
+            }
+
             Console.WriteLine("");
-    
-            for(int i = 0; i<=30; i++)
+            Console.WriteLine(welcome);
+           
+
+            //display character '-' to separate welcome and program content    
+            for(int i = 0; i<welcome.Length; i++)
             {
                 Console.Write("-");
             }
             Console.WriteLine("");
+            Console.WriteLine("");
+
+            Console.WriteLine("Please enter first number: ");
+
+
             Console.ReadKey();
         }
     }
