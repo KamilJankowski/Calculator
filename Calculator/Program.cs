@@ -9,7 +9,7 @@ namespace Calculator
     //class value
     class first_val
     {
-        private int number;
+        private double number;
 
         //ask about value
         public void get_val()
@@ -18,9 +18,9 @@ namespace Calculator
         }
 
         //read value from output and convert string to int32
-        public int read_val(int val)
+        public double read_val(double val)
         {
-            number = Convert.ToInt32(Console.ReadLine());
+            number = Convert.ToDouble(Console.ReadLine());
 
             val = number;
 
@@ -31,53 +31,53 @@ namespace Calculator
     //operations like add, substract, multiple, divide
     class operation
     {
-        public int ab;
-        public int add(int a,int b)
+        private double ab;
+        public double add(double a,double b)
         {
              ab = a + b;
             return ab;
             
         }
 
-        public int substract(int a, int b)
+        public double substract(double a, double b)
         {
             ab = a - b;
             return  ab;
         }
 
-        public int multiple(int a, int b)
+        public double multiple(double a, double b)
         {
             ab = a * b;
             return ab;
         }
 
-        public int divide(int a, int b)
+        public double divide(double a, double b)
         {
             ab = a / b;
             return  ab;
         }
 
-        public int new_add(int b)
+        public double new_add(double b)
         {
             ab = ab + b;
             return ab;
             
         }
 
-        public int new_substract(int b)
+        public double new_substract(double b)
         {
             ab = ab - b;
             return ab;
 
         }
 
-        public int new_multiple(int b)
+        public double new_multiple(double b)
         {
             ab = ab * b;
             return ab;
 
         }
-        public int new_divide(int b)
+        public double new_divide(double b)
         {
             ab = ab / b;
             return ab;
@@ -96,13 +96,13 @@ namespace Calculator
         
         static void Main(string[] args)
         {
-            int a = 0;
+            double a = 0;
              
-        //welcome string declaration
-        string welcome = "Welcome to Simple Calculator - created by Kamil Jankowski";
+            //welcome string declaration
+            string welcome = "Welcome to Simple Calculator - created by Kamil Jankowski";
 
             //display character '-' to separate welcome and program content  
-            for (int i = 0; i < welcome.Length; i++)
+            for (double i = 0; i < welcome.Length; i++)
             {
                 Console.Write("-");
             }
@@ -112,7 +112,7 @@ namespace Calculator
 
 
             //display character '-' to separate welcome and program content    
-            for (int i = 0; i < welcome.Length; i++)
+            for (double i = 0; i < welcome.Length; i++)
             {
                 Console.Write("-");
             }
@@ -122,7 +122,7 @@ namespace Calculator
             //set value
             first_val fval = new first_val();
             fval.get_val();
-            int b = fval.read_val(a);
+            double b = fval.read_val(a);
 
             Console.WriteLine("Return: {0}", b);
 
@@ -136,13 +136,13 @@ namespace Calculator
 
             //set another value
             fval.get_val();
-            int c = fval.read_val(a);
+            double c = fval.read_val(a);
 
             Console.WriteLine("Return: {0}", c);
 
             operation o = new operation();
 
-            int r;
+            double r;
 
             //select and run operation
             switch (oper)
