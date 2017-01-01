@@ -129,7 +129,7 @@ namespace Calculator
             //display operation options
             Console.WriteLine("Select operation from the following options: ");
             Console.WriteLine("1) ADD ");
-            Console.WriteLine("2) SUBSTARCT ");
+            Console.WriteLine("2) SUBSTRACT ");
             Console.WriteLine("3) MULTIPLE ");
             Console.WriteLine("4) DEVIDE ");
             char oper = Convert.ToChar(Console.ReadLine());
@@ -153,7 +153,7 @@ namespace Calculator
                     break;
                 case '2':
                      r = o.substract(b, c);
-                    Console.WriteLine("Operation SUBSTARCT: {0}", r);
+                    Console.WriteLine("Operation SUBSTRACT: {0}", r);
                     break;
                 case '3':
                      r = o.multiple(b, c);
@@ -174,7 +174,7 @@ namespace Calculator
                     //display operation options
                     Console.WriteLine("Select operation from the following options: ");
                     Console.WriteLine("1) ADD ");
-                    Console.WriteLine("2) SUBSTARCT ");
+                    Console.WriteLine("2) SUBSTRACT ");
                     Console.WriteLine("3) MULTIPLE ");
                     Console.WriteLine("4) DIVIDE ");
                     oper = Convert.ToChar(Console.ReadLine());
@@ -191,7 +191,7 @@ namespace Calculator
                             fval.get_val();
                             c = fval.read_val(a);
                             r = o.new_substract(c);
-                            Console.WriteLine("Operation SUBSTARCT: {0}", r);
+                            Console.WriteLine("Operation SUBSTRACT: {0}", r);
                             break;
                         case '3':
                             fval.get_val();
