@@ -20,6 +20,7 @@ namespace Calculator
         //read value from output and convert string to int32
         public double read_val(double val)
         {
+
             number = Convert.ToDouble(Console.ReadLine());
 
             val = number;
@@ -216,6 +217,64 @@ namespace Calculator
             {
                 Console.WriteLine("Thank you. God Bye.");
             }
+            while ((oper_again != 'n') && (oper_again != 'y'))
+            {
+                Console.WriteLine("Wrong data. Please provide correct data (0-9).");
+                Console.WriteLine("Do you want to contine? (y/n): ");
+                oper_again = Convert.ToChar(Console.ReadLine());
+
+                //if true then continue to ask about operation and value
+                while (oper_again == 'y')
+                {
+                    //display operation options
+                    Console.WriteLine("Select operation from the following options: ");
+                    Console.WriteLine("1) ADD ");
+                    Console.WriteLine("2) SUBSTRACT ");
+                    Console.WriteLine("3) MULTIPLE ");
+                    Console.WriteLine("4) DIVIDE ");
+                    oper = Convert.ToChar(Console.ReadLine());
+                    //select and run operation
+                    switch (oper)
+                    {
+                        case '1':
+                            fval.get_val();
+                            c = fval.read_val(a);
+                            r = o.new_add(c);
+                            Console.WriteLine("Operation ADD Return: {0}", r);
+                            break;
+                        case '2':
+                            fval.get_val();
+                            c = fval.read_val(a);
+                            r = o.new_substract(c);
+                            Console.WriteLine("Operation SUBSTRACT: {0}", r);
+                            break;
+                        case '3':
+                            fval.get_val();
+                            c = fval.read_val(a);
+                            r = o.new_multiple(c);
+                            Console.WriteLine("Operation MULTIPLE: {0}", r);
+                            break;
+                        case '4':
+                            fval.get_val();
+                            c = fval.read_val(a);
+                            r = o.new_divide(c);
+                            Console.WriteLine("Operation DIVIDE: {0}", r);
+                            break;
+                    }
+                    Console.WriteLine("Do you want to contine? (y/n): ");
+                    oper_again = Convert.ToChar(Console.ReadLine());
+
+
+                }
+                //terminate program
+                if (oper_again == 'n')
+                {
+                    Console.WriteLine("Thank you. God Bye.");
+                }
+            }
+
+
+                
 
             Console.ReadKey();
         }
