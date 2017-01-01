@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
+    //class value
     class first_val
     {
         private int number;
 
+        //ask about value
         public void get_val()
         {
             Console.WriteLine("Please enter value: ");
         }
 
+        //read value from output and convert string to int32
         public int read_val(int val)
         {
             number = Convert.ToInt32(Console.ReadLine());
@@ -25,6 +28,7 @@ namespace Calculator
         }
     }
 
+    //operations like add, substract, multiple, divide
     class operation
     {
         public int ab;
@@ -47,7 +51,7 @@ namespace Calculator
             return ab;
         }
 
-        public int devide(int a, int b)
+        public int divide(int a, int b)
         {
             ab = a / b;
             return  ab;
@@ -73,7 +77,7 @@ namespace Calculator
             return ab;
 
         }
-        public int new_devide(int b)
+        public int new_divide(int b)
         {
             ab = ab / b;
             return ab;
@@ -115,15 +119,14 @@ namespace Calculator
             Console.WriteLine("");
             Console.WriteLine("");
 
-
+            //set value
             first_val fval = new first_val();
-
             fval.get_val();
-                        
             int b = fval.read_val(a);
 
             Console.WriteLine("Return: {0}", b);
 
+            //display operation options
             Console.WriteLine("Select operation from the following options: ");
             Console.WriteLine("1) ADD ");
             Console.WriteLine("2) SUBSTARCT ");
@@ -131,6 +134,7 @@ namespace Calculator
             Console.WriteLine("4) DEVIDE ");
             char oper = Convert.ToChar(Console.ReadLine());
 
+            //set another value
             fval.get_val();
             int c = fval.read_val(a);
 
@@ -140,6 +144,7 @@ namespace Calculator
 
             int r;
 
+            //select and run operation
             switch (oper)
             {
                 case '1':
@@ -155,28 +160,25 @@ namespace Calculator
                     Console.WriteLine("Operation MULTIPLE: {0}", r);
                     break;
                 case '4':
-                     r = o.devide(b, c);
-                    Console.WriteLine("Operation DEVIDE: {0}", r);
+                     r = o.divide(b, c);
+                    Console.WriteLine("Operation DIVIDE: {0}", r);
                     break;
             }
 
             Console.WriteLine("Do you want to contine? (y/n): ");
             char oper_again = Convert.ToChar(Console.ReadLine());
 
-           
-
-
+           //if true then continue to ask about operation and value
             while (oper_again == 'y')
             {
-                
-                
-
+                    //display operation options
                     Console.WriteLine("Select operation from the following options: ");
                     Console.WriteLine("1) ADD ");
                     Console.WriteLine("2) SUBSTARCT ");
                     Console.WriteLine("3) MULTIPLE ");
-                    Console.WriteLine("4) DEVIDE ");
+                    Console.WriteLine("4) DIVIDE ");
                     oper = Convert.ToChar(Console.ReadLine());
+                    //select and run operation
                     switch (oper)
                     {
                         case '1':
@@ -200,8 +202,8 @@ namespace Calculator
                         case '4':
                             fval.get_val();
                             c = fval.read_val(a);
-                             r = o.new_devide(c);
-                            Console.WriteLine("Operation DEVIDE: {0}", r);
+                             r = o.new_divide(c);
+                            Console.WriteLine("Operation DIVIDE: {0}", r);
                             break;
                     }
                     Console.WriteLine("Do you want to contine? (y/n): ");
@@ -209,6 +211,7 @@ namespace Calculator
                     
                 
             }
+            //terminate program
             if (oper_again == 'n')
             {
                 Console.WriteLine("Thank you. God Bye.");
