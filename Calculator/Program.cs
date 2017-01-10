@@ -254,47 +254,55 @@ namespace Calculator
                             }
 
                         }
-                        //select and run operation
-                        switch (oper)
+                        fval.get_val();
+                        while (!(double.TryParse(fval.str, out num)))
                         {
-                            case '1':
-                                fval.get_val();
-                                c = fval.read_val(val);
-                                r = o.new_add(c);
-                                Console.WriteLine("Operation ADD Return: {0}", r);
-                                break;
-                            case '2':
-                                fval.get_val();
-                                c = fval.read_val(val);
-                                r = o.new_substract(c);
-                                Console.WriteLine("Operation SUBSTRACT: {0}", r);
-                                break;
-                            case '3':
-                                fval.get_val();
-                                c = fval.read_val(val);
-                                r = o.new_multiple(c);
-                                Console.WriteLine("Operation MULTIPLE: {0}", r);
-                                break;
-                            case '4':
-                                fval.get_val();
-                                c = fval.read_val(val);
-                                r = o.new_divide(c);
-                                Console.WriteLine("Operation DIVIDE: {0}", r);
-                                break;
+                            Console.WriteLine("This is not a number. Please try again.");
+                            fval.get_val();
+
                         }
-                        Console.WriteLine("Do you want to contine? (y/n): ");
-                        oper_again = Convert.ToChar(Console.ReadLine());
+                        if (double.TryParse(fval.str, out num))
+                        {
+                            Console.WriteLine("This is a number.");
+                            val = Convert.ToDouble(fval.str);
+                            c = fval.read_val(val);
+                            //select and run operation
+                            switch (oper)
+                            {
+                                case '1':
 
 
+                                    
+                                    r = o.new_add(c);
+                                    Console.WriteLine("Operation ADD Return: {0}", r);
+                                    break;
+                                case '2':
+                                    
+                                    
+                                    r = o.new_substract(c);
+                                    Console.WriteLine("Operation SUBSTRACT: {0}", r);
+                                    break;
+                                case '3':
+                                   
+                                    r = o.new_multiple(c);
+                                    Console.WriteLine("Operation MULTIPLE: {0}", r);
+                                    break;
+                                case '4':
+                                    
+                                    r = o.new_divide(c);
+                                    Console.WriteLine("Operation DIVIDE: {0}", r);
+                                    break;
+                            }
+                            Console.WriteLine("Do you want to contine? (y/n): ");
+                            oper_again = Convert.ToChar(Console.ReadLine());
+
+
+                        }
                     }
-                    //terminate program
-                    if (oper_again == 'n')
-                    {
-                        Console.WriteLine("Thank you. God Bye.");
-                    }
+
                     while ((oper_again != 'n') && (oper_again != 'y'))
                     {
-                        Console.WriteLine("Wrong data. Please provide correct data (0-9).");
+                        Console.WriteLine("Wrong data. Please choose yes or no.");
                         Console.WriteLine("Do you want to contine? (y/n): ");
                         oper_again = Convert.ToChar(Console.ReadLine());
                     }
@@ -332,38 +340,48 @@ namespace Calculator
                             }
 
                         }
-                        //select and run operation
-                        switch (oper)
+
+                        fval.get_val();
+                        while (!(double.TryParse(fval.str, out num)))
                         {
-                            case '1':
-                                fval.get_val();
-                                c = fval.read_val(val);
-                                r = o.new_add(c);
-                                Console.WriteLine("Operation ADD Return: {0}", r);
-                                break;
-                            case '2':
-                                fval.get_val();
-                                c = fval.read_val(val);
-                                r = o.new_substract(c);
-                                Console.WriteLine("Operation SUBSTRACT: {0}", r);
-                                break;
-                            case '3':
-                                fval.get_val();
-                                c = fval.read_val(val);
-                                r = o.new_multiple(c);
-                                Console.WriteLine("Operation MULTIPLE: {0}", r);
-                                break;
-                            case '4':
-                                fval.get_val();
-                                c = fval.read_val(val);
-                                r = o.new_divide(c);
-                                Console.WriteLine("Operation DIVIDE: {0}", r);
-                                break;
+                            Console.WriteLine("This is not a number. Please try again.");
+                            fval.get_val();
+
                         }
-                        Console.WriteLine("Do you want to contine? (y/n): ");
-                        oper_again = Convert.ToChar(Console.ReadLine());
+                        if (double.TryParse(fval.str, out num))
+                        {
+                            Console.WriteLine("This is a number.");
+                            val = Convert.ToDouble(fval.str);
+                            c = fval.read_val(val);
+                            //select and run operation
+                            switch (oper)
+                            {
+                                case '1':
+
+                                    r = o.new_add(c);
+                                    Console.WriteLine("Operation ADD Return: {0}", r);
+                                    break;
+                                case '2':
+
+                                    r = o.new_substract(c);
+                                    Console.WriteLine("Operation SUBSTRACT: {0}", r);
+                                    break;
+                                case '3':
+
+                                    r = o.new_multiple(c);
+                                    Console.WriteLine("Operation MULTIPLE: {0}", r);
+                                    break;
+                                case '4':
+
+                                    r = o.new_divide(c);
+                                    Console.WriteLine("Operation DIVIDE: {0}", r);
+                                    break;
+                            }
+                            Console.WriteLine("Do you want to contine? (y/n): ");
+                            oper_again = Convert.ToChar(Console.ReadLine());
 
 
+                        }
                     }
 
                     //terminate program
