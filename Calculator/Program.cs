@@ -139,6 +139,7 @@ namespace Calculator
                 val = Convert.ToDouble(fval.str);
                 b = fval.read_val(val);
                 Console.WriteLine("Return: {0}", b);
+
                 //display operation options
                 Console.WriteLine("Select operation from the following options: ");
                 Console.WriteLine("1) ADD ");
@@ -147,11 +148,13 @@ namespace Calculator
                 Console.WriteLine("4) DEVIDE ");
                 char oper = Convert.ToChar(Console.ReadLine());
 
+                //check if operation 1-4 has been chosen
                 if ((oper == '1') || (oper == '2') || (oper == '3') || (oper == '4'))
                 {
                     Console.WriteLine("Good choice");
                 }
 
+                //if wrong/none operation , display options again
                 while ((oper != '1') && (oper != '2') && (oper != '3') && (oper != '4'))
                 {
 
@@ -163,33 +166,36 @@ namespace Calculator
                     Console.WriteLine("3) MULTIPLE ");
                     Console.WriteLine("4) DEVIDE ");
 
+                    //read input and convert to char; check if input is between 1-4 
                     oper = Convert.ToChar(Console.ReadLine());
                     if ((oper == '1') || (oper == '2') || (oper == '3') || (oper == '4'))
                     {
-                        Console.WriteLine("Good");
+                        Console.WriteLine("Good choice");
                     }
 
                 }
 
 
 
-                //set another value
+                //set another value and test 
                 fval.get_val();
+
+                //false ask again about value
                 while (!(double.TryParse(fval.str, out num)))
                 {
                     Console.WriteLine("This is not a number. Please try again.");
                     fval.get_val();
 
                 }
+
+                //true
                 if (double.TryParse(fval.str, out num))
                 {
                     Console.WriteLine("This is a number.");
                     val = Convert.ToDouble(fval.str);
                     c = fval.read_val(val);
                     Console.WriteLine("Return: {0}", c);
-
-
-
+                    
                     switch (oper)
                     {
                         case '1':
@@ -231,11 +237,12 @@ namespace Calculator
                         Console.WriteLine("4) DIVIDE ");
                         oper = Convert.ToChar(Console.ReadLine());
 
+                        //check if operation 1-4 has been chosen
                         if ((oper == '1') || (oper == '2') || (oper == '3') || (oper == '4'))
                         {
                             Console.WriteLine("Good choice");
                         }
-
+                        //if wrong/none operation , display options again
                         while ((oper != '1') && (oper != '2') && (oper != '3') && (oper != '4'))
                         {
 
@@ -250,7 +257,7 @@ namespace Calculator
                             oper = Convert.ToChar(Console.ReadLine());
                             if ((oper == '1') || (oper == '2') || (oper == '3') || (oper == '4'))
                             {
-                                Console.WriteLine("Good");
+                                Console.WriteLine("Good choice.");
                             }
 
                         }
@@ -299,7 +306,7 @@ namespace Calculator
 
                         }
                     }
-
+                    // if no and yes 
                     while ((oper_again != 'n') && (oper_again != 'y'))
                     {
                         Console.WriteLine("Wrong data. Please choose yes or no.");
@@ -336,11 +343,11 @@ namespace Calculator
                             oper = Convert.ToChar(Console.ReadLine());
                             if ((oper == '1') || (oper == '2') || (oper == '3') || (oper == '4'))
                             {
-                                Console.WriteLine("Good");
+                                Console.WriteLine("Good choice.");
                             }
 
                         }
-
+                        //another value
                         fval.get_val();
                         while (!(double.TryParse(fval.str, out num)))
                         {
